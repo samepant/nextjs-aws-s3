@@ -1,11 +1,7 @@
 {
-  "name": "hello-cdk",
+  "name": "nextjs-s3",
   "version": "0.1.0",
-  "bin": {
-    "hello-cdk": "bin/hello-cdk.js"
-  },
   "scripts": {
-    "cdk": "cdk",
     "build": "next build",
     "dev": "next",
     "start": "next start"
@@ -13,10 +9,20 @@
   "dependencies": {
     "@aws-cdk/aws-s3": "^1.71.0",
     "@aws-cdk/core": "1.71.0",
+    "@hapi/iron": "6.0.0",
     "aws-sdk": "^2.783.0",
+    "axios": "^0.21.0",
+    "cookie": "0.4.1",
     "next": "^10.0.0",
+    "next-connect": "0.8.1",
+    "passport": "0.4.1",
+    "passport-local": "1.0.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-cookie": "^4.0.3",
+    "react-dom": "^17.0.1",
+    "react-file-drop": "^3.1.0",
+    "swr": "0.3.0",
+    "uuid": "^8.3.1"
   },
   "devDependencies": {
     "aws-cdk": "1.71.0"
