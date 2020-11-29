@@ -4,7 +4,7 @@ const MediaList = (props) => (
   <ul>
     {props.media.map((item, index) => (
       <li key={item.etag} onClick={() => props.setFocusedIndex(index)}>
-        <MediaItem url={item.url} index={index} />
+        <MediaItem keyName={item.key} index={index} />
       </li>
     ))}
 
