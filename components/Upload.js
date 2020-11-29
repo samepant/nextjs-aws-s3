@@ -85,7 +85,7 @@ export default function Upload(file) {
       {showUpload &&
         <div className='upload-form'>
           <form>
-            <h2>Pictures to Upload</h2>
+            <h2>🙏 Upload just your faves 🙏</h2>
             <FileDrop 
               onTargetClick={() => fileInputRef.current.click()}
               onDrop={handleFiles}
