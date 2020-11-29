@@ -24,7 +24,7 @@ const FocusedMedia = (props) => {
       .focused {
         position: absolute;
         width: 100vw;
-        min-height: 100vh;
+        height: 100vh;
         top: 0;
         left: 0;
         padding: 1em;
