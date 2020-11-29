@@ -11,8 +11,8 @@ export default function Upload(file) {
       const newArray = [...filesToUpload];
       newArray[fileIndex].uploading = true;
       setFileData(newArray);
-
-      const filename = encodeURIComponent(`${nameText}/${file.name}`);
+      const extension = file.name.split('.').pop();
+      const filename = encodeURIComponent(`${nameText}/${file.uuid}.${extension}`);
       const res = await axios.get(`/api/upload-url?file=${filename}`);
       const { url, fields } = res.data;
       const formData = new FormData();
@@ -71,6 +71,10 @@ export default function Upload(file) {
     const results = await Promise.all(filePromises);
     const errorResults = results.filter((result) => result !== null);
 
+    if (errorResults.length === 0) {
+      console.log('no errors');
+      window.location.reload()
+    }
     console.log(errorResults);
   }
 
