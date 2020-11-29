@@ -1,4 +1,4 @@
-const imgBlockMeasure = 24;
+const imgBlockMeasure = 23.5;
 
 const MediaItem = (props) => (
   <figure>

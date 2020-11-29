@@ -37,6 +37,9 @@ const FocusedMedia = (props) => {
         height: 92vh;
         object-fit: contain;
       }
+      figure {
+        margin: 0;
+      }
       button {
         outline: none;
         border: 1px solid green;
@@ -69,6 +72,7 @@ const FocusedMedia = (props) => {
         width: 100vw;
         display: flex;
         justify-content: space-around;
+        font-size: calc(10px + 0.3vmin);
       }
       
     `}</style>
