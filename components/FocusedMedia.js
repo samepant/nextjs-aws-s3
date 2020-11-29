@@ -24,13 +24,25 @@ const FocusedMedia = (props) => {
 
     return `https://d1p46fbo5du4bt.cloudfront.net/${base64Encoded}`
   }
+
+  const downloadImage = () => {
+    const imageURL = `https://xo-tours-pix.s3.us-east-2.amazonaws.com/${props.mediaList[props.focusedIndex].key}`;
+    if (navigator.share) {
+      navigator.share({
+        url: imageURL
+      })
+      .catch(console.error);
+    } else {
+      window.open(imageURL, '_blank');
+    }
+  }
   return (
     <div className='focused'>
       <figure>
         <img src={formatURL(props.mediaList[props.focusedIndex].key)} alt="" />
       </figure>
       <div className='toolbar'>
-         <a href={`https://xo-tours-pix.s3.us-east-2.amazonaws.com/${props.mediaList[props.focusedIndex].key}`} target='blank'>Download</a>
+         <button onClick={downloadImage}>Download</button>
          <button onClick={() => props.setFocusedIndex(-1)}>Close</button>
          <button onClick={goToPreviosImage}>Previous</button>
          <button onClick={goToNextImage}>Next</button>
